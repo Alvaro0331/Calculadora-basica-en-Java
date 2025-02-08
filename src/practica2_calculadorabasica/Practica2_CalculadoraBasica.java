@@ -17,7 +17,7 @@ public class Practica2_CalculadoraBasica extends JFrame implements ActionListene
     Operaciones op;
     
     public Practica2_CalculadoraBasica(){//Constructor
-        this.setBounds(0, 0, 600, 400);//Crear ventana
+        this.setBounds(0, 0, 400, 200);//Crear ventana
         this.setResizable(false);//Inhabilitar minimizar ventana
         this.setLayout(null);
         
