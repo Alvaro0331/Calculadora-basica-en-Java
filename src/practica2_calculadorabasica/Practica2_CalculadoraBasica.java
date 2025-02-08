@@ -4,7 +4,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 /**
@@ -15,6 +14,7 @@ public class Practica2_CalculadoraBasica extends JFrame implements ActionListene
     
     JTextField txtDisplay1,txtDisplay2,txtDisplay3;
     JButton btnSuma,btnResta,btnMult,btnDiv;
+    Operaciones op;
     
     public Practica2_CalculadoraBasica(){//Constructor
         this.setBounds(0, 0, 600, 400);//Crear ventana
@@ -75,6 +75,8 @@ public class Practica2_CalculadoraBasica extends JFrame implements ActionListene
         btnDiv.setVisible(true);
         btnDiv.addActionListener(this);
         this.add(btnDiv);
+        
+        op=new Operaciones();
     }
     
     public static void main(String[] args) {
@@ -84,18 +86,41 @@ public class Practica2_CalculadoraBasica extends JFrame implements ActionListene
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        //Test de botones
         if(e.getSource()==btnSuma){
-            JOptionPane.showMessageDialog(null, "Suma");
+                                //Transformar string a double
+            op.setNumero1(Double.valueOf(txtDisplay1.getText()));
+            op.setNumero2(Double.valueOf(txtDisplay2.getText()));
+            op.setOperaciones("+");
+                                //Convertir a cadena el resultado
+            txtDisplay3.setText(String.valueOf(op.getResultado()));
+            //JOptionPane.showMessageDialog(null, "Suma");
         }
         if(e.getSource()==btnResta){
-            JOptionPane.showMessageDialog(null, "Resta");
+                                    //Transformar string a double
+            op.setNumero1(Double.valueOf(txtDisplay1.getText()));
+            op.setNumero2(Double.valueOf(txtDisplay2.getText()));
+            op.setOperaciones("-");
+                                //Convertir a cadena el resultado
+            txtDisplay3.setText(String.valueOf(op.getResultado()));
+            //JOptionPane.showMessageDialog(null, "Resta");
         }
         if(e.getSource()==btnMult){
-            JOptionPane.showMessageDialog(null, "Mutliplicacion");
+                                    //Transformar string a double
+            op.setNumero1(Double.valueOf(txtDisplay1.getText()));
+            op.setNumero2(Double.valueOf(txtDisplay2.getText()));
+            op.setOperaciones("X");
+                                //Convertir a cadena el resultado
+            txtDisplay3.setText(String.valueOf(op.getResultado()));
+            //JOptionPane.showMessageDialog(null, "Mutliplicacion");
         }
         if(e.getSource()==btnDiv){
-            JOptionPane.showMessageDialog(null, "Division");
+                                    //Transformar string a double
+            op.setNumero1(Double.valueOf(txtDisplay1.getText()));
+            op.setNumero2(Double.valueOf(txtDisplay2.getText()));
+            op.setOperaciones("/");
+                                //Convertir a cadena el resultado
+            txtDisplay3.setText(String.valueOf(op.getResultado()));
+            //JOptionPane.showMessageDialog(null, "Division");
         }
     }
     
