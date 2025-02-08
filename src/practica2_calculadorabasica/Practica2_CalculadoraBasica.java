@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 /**
@@ -20,6 +21,7 @@ public class Practica2_CalculadoraBasica extends JFrame implements ActionListene
         this.setResizable(false);//Inhabilitar minimizar ventana
         this.setLayout(null);
         
+        //Cajas de texto
         txtDisplay1=new JTextField();
         txtDisplay1.setBounds(10,10,80,30);
         txtDisplay1.setName("txtDisplay1");
@@ -40,6 +42,39 @@ public class Practica2_CalculadoraBasica extends JFrame implements ActionListene
         txtDisplay3.setText("");
         txtDisplay3.setVisible(true);
         this.add(txtDisplay3);
+        
+        //Botones
+        btnSuma=new JButton();
+        btnSuma.setBounds(10, 50, 50, 30);
+        btnSuma.setName("btnSuma");
+        btnSuma.setText("+");
+        btnSuma.setVisible(true);
+        btnSuma.addActionListener(this);
+        this.add(btnSuma);
+        
+        btnResta=new JButton();
+        btnResta.setBounds(70, 50, 50, 30);
+        btnResta.setName("btnResta");
+        btnResta.setText("-");
+        btnResta.setVisible(true);
+        btnResta.addActionListener(this);
+        this.add(btnResta);
+        
+        btnMult=new JButton();
+        btnMult.setBounds(130, 50, 50, 30);
+        btnMult.setName("btnMult");
+        btnMult.setText("X");
+        btnMult.setVisible(true);
+        btnMult.addActionListener(this);
+        this.add(btnMult);
+        
+        btnDiv=new JButton();
+        btnDiv.setBounds(190, 50, 50, 30);
+        btnDiv.setName("btnDiv");
+        btnDiv.setText("/");
+        btnDiv.setVisible(true);
+        btnDiv.addActionListener(this);
+        this.add(btnDiv);
     }
     
     public static void main(String[] args) {
@@ -49,7 +84,19 @@ public class Practica2_CalculadoraBasica extends JFrame implements ActionListene
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        
+        //Test de botones
+        if(e.getSource()==btnSuma){
+            JOptionPane.showMessageDialog(null, "Suma");
+        }
+        if(e.getSource()==btnResta){
+            JOptionPane.showMessageDialog(null, "Resta");
+        }
+        if(e.getSource()==btnMult){
+            JOptionPane.showMessageDialog(null, "Mutliplicacion");
+        }
+        if(e.getSource()==btnDiv){
+            JOptionPane.showMessageDialog(null, "Division");
+        }
     }
     
 }
